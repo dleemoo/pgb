@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  pgb:
+    image: postgres:<%= ENV['VERSION'] %>
+    volumes:
+      - ./persistence/data-<%= ENV['VERSION'] %>:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
